@@ -1,0 +1,169 @@
+*{
+    text-transform: capitalize;
+    margin:0px;
+    text-transform: capitalize;
+  
+}
+#header{
+    background-color: rgb(185, 181, 181);
+    height: 9vw;
+    width: 99%;
+    position: absolute;
+    margin-top: -0.5vw;
+    padding-top: 2.2vw;
+    display: block;
+    
+}
+.leftupperdiv h1{
+    font-size:2.35vw;
+}
+.midsegment h1{
+    font-size:2.35vw;
+}
+.rightupperdiv h1{
+    font-size:2.35vw;
+}
+.rightupperdiv h2{
+    font-size:1.75vw;
+}
+p{
+    font-size: 1.2vw;
+}
+
+.leftupperdiv, .leftmidlesection{
+    /* border: 1px solid blue; */
+    position: absolute;
+    z-index: 10;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.rightupperdiv{
+    float: right;
+    margin-top: 1em;
+    color: #002e62;
+    margin-right: 2em;
+    /* border: 1px solid blue; */
+}
+.leftmidlesection{
+    padding-top: 1vw;
+    padding-bottom: 5vw;
+    margin-top: 10.7vw;
+    font-size: 1.45vw;
+    background-color: #002e62;
+    z-index: 5;
+    margin-left: 4px;
+    text-align: center;
+
+}
+.rightmiddlesection{
+    float: right;
+    height:10vw;
+ 
+    width: 80%;
+    margin-top: 5vw;
+}
+.firstsegment{
+    height:90%;
+    margin-top: 5%;
+    width:95%;
+    border-radius: 2px;
+    display: inline-block;
+
+}
+.secondsegment{
+    height:60%; width:95%;margin-top: 0%;font-weight: 600;
+}
+.secondsegment label{
+    margin-left: 15%;
+    font-size: 1.3vw;
+}
+.secondsegment input{
+    width: 27%;
+    height: 25%;
+}
+#gobtn{
+    width: 4vw;
+    height: 2vw;
+    margin-left: 1vw;
+}
+.thirdsegment{
+    width:95%; 
+    background-color: rgb(241, 237, 237);
+    margin-top: 0%;
+    height: 15vw;
+    font-size: 1.1vw;
+}
+.thirdsegment table tr td{
+    line-height: 3em;
+}
+#btn{
+    padding:6px 18px;
+    font-size: 15px;
+    margin-bottom:20px ;
+    cursor: pointer;
+    outline: none;
+}
+
+button{
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+.smallsegment{
+    background-color: rgb(217, 221, 221);
+    font-size: 1.1vw;
+    text-align: center;
+    height: 6em;
+    margin-left: 1em;
+    min-width: 12vw;
+    }
+    .segment_header{
+        font-weight: 600;
+    }
+.rightmiddlesection button{
+    margin-top: 15%;
+    margin-left: 35%;
+    padding:0.7vw 1.7vw;
+    border-radius: 10px;
+    border: none;
+    font-size: 2vw;
+    background-color: rgb(185, 181, 181);
+}
+.rightmiddlesection button:hover{
+    color: white;
+    background-color: #002e62;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+ul li{
+    font-weight: 500;
+    list-style: none;
+    line-height: 5vw;
+    margin-left: -10px;
+    color: white;
+    margin-right: 23px;
+    cursor: pointer;
+
+}
+ul li button{
+    padding: 0.8em 2em;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2vw;
+    font-weight: 700;
+    background-color: rgb(185, 181, 181);
+}
+@media only screen and (max-width: 700px){
+    #btn{
+        padding: 1px 8px;
+        font-size: 1vw;
+        margin-bottom: 8px;
+        cursor: pointer;
+        outline: none; 
+    }
+    .thirdsegment{
+        margin-left: 4vw;
+    }
+}

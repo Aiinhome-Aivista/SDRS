@@ -1,0 +1,17 @@
+<div class="container_fluid">
+    <div class="container_cover">
+        <div class="login_text">
+            SMART
+            <h2> Document Repository System</h2>
+
+        </div>
+        <div class="login_container">
+            <h1 style="font-weight: 700; font-size: 30px;color: #002e62;">Welcome</h1>
+            <form [formGroup]="userlogin" (ngSubmit)="onFormSubmit()">
+                <input type="email" formControlName="email" [(ngModel)]="email" placeholder="Username" [email]="true">
+                <input type="password" formControlName="password" [(ngModel)]="password" placeholder="Password">
+                <button (click)="Userlogin()" [disabled]="!userlogin.valid" class="button-15">Log in</button>
+            </form>
+        </div>
+    </div>
+</div>

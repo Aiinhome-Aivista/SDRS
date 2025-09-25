@@ -1,0 +1,201 @@
+*{
+    text-transform: capitalize;
+    margin:0px;
+    text-transform: capitalize;
+   
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    background-color: #002e62;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
+    height: 4vw;
+}
+.leftupperdivsection h3{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.leftupperdivsection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    color: #f1eded;
+    text-align: left;
+}
+.headerLogout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+
+.rightupperdivsection h3{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.rightupperdivsection{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    color: #f1eded;
+    text-align: right;
+}
+.rightupperdivsection p{
+    color: #f1eded;
+}
+.headerText h3{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.leftmidlesection{
+    padding-top: 1vw;
+    padding-bottom: 5vw;
+    margin-top: 10.7vw;
+    font-size: 1.45vw;
+    background-color: #002e62;
+    z-index: 5;
+    margin-left: 4px;
+    text-align: center;
+
+}
+.rightmiddlesection{
+    float: right;
+    height:10vw;
+ 
+    width: 80%;
+    margin-top: 10.7vw;
+}
+.firstsegment{
+    height:90%;
+    margin-top: 5%;
+    width:95%;
+    border-radius: 2px;
+    display: inline-block;
+
+}
+.secondsegment{
+    height:70%; width:95%;margin-top: 1%;font-weight: 600;
+}
+.secondsegment label{
+    margin-left: 15%;
+}
+.secondsegment input{
+    width: 40%;
+    height: 25%;
+}
+.thirdsegment{
+    width:95%; 
+    background-color: rgb(241, 237, 237);
+    margin-top: 1%;
+    height: 80%;
+}
+.thirdsegment table tr td{
+    line-height: 3em;
+}
+#btn{
+    padding:6px 18px;
+    font-size: 15px;
+    margin-bottom:20px ;
+    cursor: pointer;
+    outline: none;
+}
+
+button{
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+.smallsegment{
+    position: absolute;
+    height: 100px;
+    width: 100px; background-color: rgb(217, 221, 221); font-size: 15px;z-index: 50; text-align: center; font-weight: 600;line-height: 2em;
+}
+.rightmiddlesection button{
+    margin-top: 15%;
+    margin-left: 35%;
+    padding:0.7vw 1.7vw;
+    border-radius: 10px;
+    border: none;
+    font-size: 2vw;
+    background-color: rgb(185, 181, 181);
+}
+.rightmiddlesection button:hover{
+    color: white;
+    background-color: #002e62;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+ul li{
+    font-weight: 500;
+    list-style: none;
+    line-height: 5vw;
+    margin-left: -10px;
+    color: white;
+    margin-right: 23px;
+    cursor: pointer;
+
+}
+#linkpath{
+ margin-left: 0vw;cursor: pointer;
+}
+#timeslot{
+    color:black;font-weight: 600;float: right; 
+}
+@media only screen and (max-width: 700px){
+    #timeslot{
+        line-height: 4vw;
+    }
+    #linkpath{
+        margin-left: 0vw;
+        line-height: 2vw;
+    }
+  .leftupperdiv{
+    margin-top: 0.6em;
+    }
+    .rightupperdiv{
+        margin-top: 0.6em;
+    }
+ 
+    
+}
+ul li button{
+    padding: 0.8em 2em;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2vw;
+    font-weight: 700;
+    background-color: rgb(185, 181, 181);
+}
+.varticalLine{
+    height: 95%;
+    width: 2px;
+    margin-left: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #f1eded;
+}
+
+.btn-logout{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+}
+.headerLogout span{
+    margin-top: 30px;
+    margin-left: -53px;
+}
+.leftupperdivsection span{
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-left: 10px;
+}

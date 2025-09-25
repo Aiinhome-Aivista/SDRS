@@ -1,0 +1,67 @@
+[
+    {
+     "collegeName": {
+       "0": "Kanchrapara",
+       "1": " ",
+       "2": " ",
+       "3": " ",
+       "4": " ",
+       "5": " "
+   } ,
+   
+   "company": {
+     "0": " ",
+     "1": " ",
+     "2": " ",
+     "3": " ",
+     "4": " ",
+     "5": " "
+ },
+ 
+ "degree": {
+   "0": "Bootstrap",
+   "1": "‘GETFIT’ ANDROID APP RELATED TO FITNESS | JUL 2018",
+   "2": "•",
+   "3": "Environment ",
+   "4": " ",
+   "5": " "
+ },
+ 
+ "designation": {
+   "0": "Software Engineer",
+   "1": "/  Objective  ",
+   "2": "Python Framework  Flask, Django",
+   "3": "Major",
+   "4": " ",
+   "5": " "
+ },
+ 
+ "graduationYear": {
+   "0": " ",
+   "1": " ",
+   "2": " ",
+   "3": " ",
+   "4": " ",
+   "5": " "
+ },
+ 
+ "location": {
+   "0": " ",
+   "1": " ",
+   "2": " ",
+   "3": " ",
+   "4": " ",
+   "5": " "
+ },
+ 
+ "name": {
+   "0": "Ankan Biswas",
+   "1": " ",
+   "2": " ",
+   "3": " ",
+   "4": " ",
+   "5": " "
+ }
+
+}
+]
