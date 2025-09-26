@@ -1,0 +1,24 @@
+<div>
+    <div class="lable">
+      <label for="filename">
+        Search
+      </label>
+    </div>
+    <div>
+      <input #fileNameSearch type="text" placeholder="Search filename" class="form-control"
+        (click)="showsSearchesPanel = true" />
+    </div>
+  
+    <div [hidden]="!showsSearchesPanel">
+      <div class='search'>
+        <div *ngFor="let item of apiArrayData;" tappable (click)="setFileName(item)">
+          {{item}}
+        </div>
+      </div>
+      <div class="search" *ngIf="apiArrayData && apiArrayData.length<=0 && !isSearching">
+        No Filename Found
+      </div>
+      <div class="search" [hidden]="!isSearching"> Searching Filename ...</div>
+  
+    </div>
+  </div>

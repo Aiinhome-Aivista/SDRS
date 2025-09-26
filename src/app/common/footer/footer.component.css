@@ -1,0 +1,15 @@
+footer {
+    background-color: #002e62; /* A color that seems to match your app's theme */
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10; /* Ensure it's above most content */
+    box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.2), 0 -4px 3px 0 rgba(0, 0, 0, 0.19);
+}
+
+p {
+    margin: 0;
+}

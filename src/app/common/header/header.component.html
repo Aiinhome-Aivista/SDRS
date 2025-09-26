@@ -1,0 +1,23 @@
+
+    <div  id="header">
+        <div class="leftupperdivsection">
+            <p id="linkpath"(click)="backtohome()"><img src="../../../assets/home.png"style="width: 40px; height: 40px;"> </p>
+            <div class="varticalLine"></div>
+           <p style="width:30%; display: flex; align-items: center; text-align: center; justify-content: center; font-size: x-large; font-weight: bolder;"><span></span>Aiinhome</p>
+           <div class="varticalLine"></div>
+           <span>Welcome {{userName}}</span> 
+        </div>
+         <div class="rightupperdivsection">
+        <div class="headerText">
+            <h3>SMART Document Repository System</h3>
+            <p style="color: #f1eded;" id="timeslot">{{dt0}} {{dt1}}, {{dt2}} {{dt3}}:{{dt4}} {{APM}}</p>
+        </div>
+        <div class="varticalLine"></div>
+        <div class="headerLogout">
+            <button class="btn-logout" (click)="logout()">
+                <img src="../../../assets/logout.png" style="width: 40px; height: 40px;">
+            </button>                   
+        </div>
+    </div>
+    </div>
+
