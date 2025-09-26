@@ -103,7 +103,7 @@
         <div class="">
           <button id="btn-uploads" class="btn-upload" (click)="uploadResume()" [disabled]="isUploading">
             <span *ngIf="!isUploading">Upload</span>
-            <span *ngIf="isUploading">
+            <span *ngIf="isUploading" style="font-size: small;">
               Uploading..
             </span>
           </button>
