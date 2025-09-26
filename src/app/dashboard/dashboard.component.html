@@ -102,12 +102,12 @@
 
                 <!-- action column -->
                 <span *ngSwitchCase="'action'" style="text-align: center;">
-                  <button (click)="showDialog(rowData)" type="button" class="btnn">
+                  <button id="btn" (click)="showDialog(rowData)" type="button" class="btnn" data-toggle="modal" data-target="#exampleModalCenter" label="Show">
                     <i class="fa fa-eye" aria-hidden="true"></i>
                   </button>
-                  <button (click)="showDocuments(rowData)" type="button" class="btnn">
+                  <!-- <button (click)="showDocuments(rowData)" type="button" class="btnn">
                     <i class="fa-solid fa-file"></i>
-                  </button>
+                  </button> -->
                 </span>
 
                 <!-- default column -->
