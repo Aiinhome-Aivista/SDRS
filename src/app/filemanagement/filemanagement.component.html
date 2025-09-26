@@ -1,0 +1,134 @@
+<app-header></app-header>
+<div>
+  <app-leftsidemenu></app-leftsidemenu>
+
+  <div class="container-fluid rightmiddlesection">
+    <!-- <div class="logo">
+      <img src="../../assets/dbdtlogo.jpeg" alt="">
+    </div> -->
+    <!-- <div class="search-bar">
+      <input type="hidden" id="file_id" name="file_id" [(ngModel)]="fileId"/>
+      <input type="text" id="search_input" class="form-control search-input" size="50"  (click)="searchoutevent()" 
+      (keyup)="setFileName($event)" name="fileName" placeholder="Search or input Name" [(ngModel)]="fileName">
+      
+      <i class="fa-sharp fa-solid fa-xmark cross" *ngIf="fileName?.length" (click)="clearSearch()"></i>    
+      <input type="file" class="form-control" multiple (change)="selectonfile($event)" accept="image/png,image/jpeg,image/jpg" id="fileupload"/>
+      <button id="btn-upload" class="" (click)="uploadResume()">Upload</button>
+    </div>
+    <div class="search-list">
+      <div [hidden]="!showsSearchesPanel">
+        <div class="search list-group">
+          <div class="list-group-item"  *ngFor="let item of apiArrayData;" style="cursor: pointer;"  (click)="selectFileName(item)">
+            {{item}}
+          </div>
+        </div>
+        <div class="search" *ngIf="apiArrayData && apiArrayData.length <=0 && !isSearching">
+          No Filename Found
+        </div>
+        <div class="search" [hidden]="!isSearching"> Searching Filename ...</div>    
+      </div>
+    </div> -->
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+    <!-- For Radio intut -->
+    <div style="margin-left: 36.5%; margin-bottom: 20px; ">
+      <div style="display: flex; flex-direction: row; ">
+        <div class="custom-control custom-radio ">
+          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"
+            (click)=toggleDisplayDivIfTrue() value="Normal document" [(ngModel)]="options">
+          <label class="custom-control-label" for="customRadioInline1" style="font-size: 19px;">Upload document</label>
+        </div>
+        <!-- <div class="custom-control custom-radio" style="margin-left: 20px;">
+          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input"
+            (click)=toggleDisplayDivIf() value="Hand written document" [(ngModel)]="options">
+          <label class="custom-control-label" for="customRadioInline2" style="font-size: 19px;">Hand written
+            document</label>
+        </div> -->
+      </div>
+
+      <!-- <div *ngIf="!isShowDivIf">
+        <div class="form-group" style="width: 81%; margin-top: 7px; margin-left: 5px;">
+          <textarea placeholder="Document key info....." class="form-control " rows="1" name="textarea"
+            style="max-height: 100px; min-height: 40px;" [(ngModel)]="textboxValue"></textarea>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------  -->
+    <div class="container rightmiddlesection"
+      style="margin: auto;width: 65%;align-items: center;align-content: center;">
+
+      <div class="searchBox">
+        <div class="">
+          <div class="p-mr-2 ">
+            <div class="p-inputgroup ">
+              <i class="fa fa-search searchButton" style="font-size: 19px; " aria-hidden="true"></i>
+              <p-autoComplete styleClass="p-autocomplete-list-item " [(ngModel)]="fileName"
+                (completeMethod)="filterSearchData($event)" [suggestions]="filteredSearchData" field="Name"
+                placeholder="Input document name" [minLength]="1" (onSelect)="selectFileName($event)" [type]="'search'"
+                emptyMessage="No Filename Found" [showClear]="true">
+
+                <ng-template pTemplate="fileName" let-fileName>
+                  <div class="flex align-items-center gap-2">
+                    <i class="pi pi-calendar" style="font-size: 0.9rem; margin-right: 15px;"></i>
+                    <span id="boot-icon" class="bi bi-calendar-date"
+                      style="font-size: 1rem; color: rgb(0, 0, 0);"></span>
+                    <span>{{ fileName.Name }}</span>
+                  </div>
+                </ng-template>
+
+              </p-autoComplete>
+              <!-- <span class="p-inputgroup-addon" (click)="onClear()" style="cursor: pointer;"><i *ngIf="fileName?.length"
+                  class="pi pi-times"></i></span> -->
+              <!-- <i class="pi pi-times" (click)="onClear()"></i>    -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="middleitem">
+          <!-- <input type="file" class="form-control" multiple (change)="selectonfile($event)"
+              accept="image/png,image/jpeg,image/jpg" id="fileupload" /> -->
+
+          <div (click)="uploadFile.click()">
+            <img src="assets/upload-icon.png" width="50" height="50" alt="" style="border: none;cursor: pointer;"
+              data-toggle="tooltip" data-placement="top" title="Choose files">
+            <input #uploadFile (change)="selectonfile($event)" multiple
+              accept="image/png,image/jpeg,image/jpg,application/pdf" type='file' style="display:none"
+              id="fileupload" />
+          </div>
+          <span *ngIf="FileNameShow" class="file-names">{{selectedFilesNo}} files</span>
+        </div>
+
+        <div class="">
+          <button id="btn-uploads" class="btn-upload" (click)="uploadResume()" [disabled]="isUploading">
+            <span *ngIf="!isUploading">Upload</span>
+            <span *ngIf="isUploading">
+              Uploading..
+            </span>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- <div class="row p-2">
+      <div class="col-md-7">
+        <div [hidden]="!showsSearchesPanel">
+          <div class="search list-group">
+            <div class="list-group-item" *ngFor="let item of apiArrayData;" style="cursor: pointer;"
+              (click)="selectFileName(item)">
+              {{item}}
+            </div>
+          </div>
+          <div class="search" *ngIf="apiArrayData && apiArrayData.length <=0 && !isSearching">
+            No Filename Found
+          </div>
+          <div class="search" [hidden]="!isSearching"> Searching Filename ...</div>
+        </div>
+      </div>
+    </div> -->
+    <!--------------------test---------------->
+  </div>
+</div>
+<app-footer></app-footer>

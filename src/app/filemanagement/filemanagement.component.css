@@ -1,0 +1,495 @@
+* {
+  text-transform: capitalize;
+  margin: 0px;
+  text-transform: capitalize;
+}
+
+#header {
+  background-color: rgb(185, 181, 181);
+  height: 9vw;
+  width: 99%;
+  position: absolute;
+  margin-top: -0.5vw;
+  padding-top: 2.2vw;
+  display: block;
+}
+.leftupperdiv h1 {
+  font-size: 2.35vw;
+}
+.rightupperdiv h1 {
+  font-size: 2.35vw;
+}
+.rightupperdiv h2 {
+  font-size: 1.75vw;
+}
+p {
+  font-size: 1.2vw;
+}
+
+.leftupperdiv,
+.leftmidlesection {
+  /* border: 1px solid blue; */
+  position: absolute;
+  z-index: 10;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+.rightupperdiv {
+  float: right;
+  margin-top: 1em;
+  color: #002e62;
+  margin-right: 2em;
+  /* border: 1px solid blue; */
+}
+.leftmidlesection {
+  padding-top: 1vw;
+  padding-bottom: 5vw;
+  margin-top: 10.7vw;
+  font-size: 1.45vw;
+  background-color: #002e62;
+  z-index: 5;
+  margin-left: 4px;
+  text-align: center;
+}
+
+
+#upload {
+  font-weight: 700;
+  padding: 4px;
+  position: absolute;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 8px;
+  margin-left: 8vw;
+}
+
+progress[value] {
+  height: 100%;
+  width: 40%;
+  margin-left: 14em;
+}
+#tag {
+  position: absolute;
+  margin-top: 1em;
+  font-size: 12px;
+  margin-left: 10em;
+  font-weight: 600;
+}
+
+#btn {
+  padding: 5px 9px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+}
+.firstsegment {
+  background-color: rgb(241, 237, 237);
+  height: 30%;
+  margin-top: 3%;
+  width: 100%;
+  border-radius: 2px;
+}
+.topsegment{
+  display: flex;
+  background-color: aqua;
+  height: 50px;
+}
+.secondsegment {
+  width: 100%;
+  background-color: rgb(241, 237, 237);
+  margin-top: 1%;
+}
+.thirdsegment {
+  width: 100%;
+  background-color: rgb(241, 237, 237);
+  margin-top: 1%;
+  height: 23vw;
+}
+.thirdsegment table tr td {
+  line-height: 3em;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul li {
+  font-weight: 500;
+  list-style: none;
+  line-height: 5vw;
+  margin-left: -10px;
+  color: white;
+  margin-right: 23px;
+  cursor: pointer;
+}
+
+
+/* filemanagement css merge from here*/
+
+.leftupperdiv h1 {
+  font-size: 2.35vw;
+}
+.rightupperdiv h1 {
+  font-size: 2.35vw;
+}
+.rightupperdiv h2 {
+  font-size: 1.75vw;
+}
+p {
+  font-size: 1.2vw;
+}
+
+.leftupperdiv,
+.leftmidlesection {
+  /* border: 1px solid blue; */
+  position: absolute;
+  z-index: 10;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+.rightupperdiv {
+  float: right;
+  margin-top: 1em;
+  color: #002e62;
+  margin-right: 2em;
+  /* border: 1px solid blue; */
+}
+.leftmidlesection {
+  padding-top: 1vw;
+  padding-bottom: 5vw;
+  margin-top: 10.7vw;
+  font-size: 1.45vw;
+  background-color: #002e62;
+  z-index: 5;
+  margin-left: 4px;
+  text-align: center;
+}
+/* .rightmiddlesection{
+    float: right;
+    height:10vw;
+ 
+    width: 80%;
+    margin-top: 10.7vw;
+} */
+
+
+/* #fileupload {
+  margin-left: 35%;
+}
+
+#uploadslot #fileupload {
+  font-size: 1.2vw;
+  outline: none;
+  border: none;
+} */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul li {
+  font-weight: 500;
+  list-style: none;
+  line-height: 5vw;
+  margin-left: -10px;
+  color: white;
+  margin-right: 23px;
+  cursor: pointer;
+}
+
+  /***********************************Search*******************************************/
+  .logo{    
+    margin-top: 4%;
+    margin-bottom: 15px;
+    margin-left: 43%;
+  }
+
+  .rightmiddlesection {
+    float: right;
+    height: 10vw;
+    width: 100%;
+    /* margin-top: 4.7vw; */
+    margin-top: 13%;
+    margin-right: 3vw;
+  }
+
+  textarea:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+  .search-bar{    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-bottom: 20px;
+    /* margin-left: 20%; */
+   
+  }
+
+  .search-input{
+    /* margin-right: 20px;
+    width: 230vw;
+    margin-left: 12%; */
+    border-color: #002e62;
+    border: solid 2px;    
+    border-radius: 50px;
+    height: 50px;
+    color: #002e62;
+  }
+
+  #fileupload{
+    /* margin-right: 20px; */
+    border-color: #002e62;
+    border: solid 2px;    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #002e62;
+    margin-top: 5px;
+  }
+  .col-2-custom {
+    flex: 0 0 7%;
+    max-width: 16.666667%;
+    margin-left: 1%;
+}
+  .btn-upload{
+    height: 2.44vw;
+    border: none;
+    border-radius: 6px;
+    width: 5vw;
+    color: #FFFFFF;
+    background-color: #002e62;
+    margin-top: 10px
+;
+    padding: 5px;
+  }
+  .file-names{
+    text-align: center;
+    align-self: center;
+    border: none;
+    border-radius: 6px;
+    width: 5vw;    
+    color: black;
+    margin-top: 5px;
+    /* background-color: #002e62; */
+  }
+  #fileupload::file-selector-button{
+    background: #002e62;
+    color: #FFFFFF;
+    margin-top: -3vw;
+  }
+  .search-list{    
+    margin-left: 29.5%;
+    width: 44.5vw;
+  }
+
+  .cross{
+    /* position: absolute;
+    left: 37vw;
+    top: 0.4vw; */
+    /* position: relative;
+    left: -6px;
+    top: -43px;
+    cursor: pointer;
+    border-radius: 10rem; */
+    background-color: #e0e6ed;   
+    float: right;
+    margin-bottom: -40px;
+  }
+
+
+  /* :host ::ng-deep .p-inputtext {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    background: #fff;
+    color: #002e62;
+    width: 400px;
+    padding: 0.75rem 1.75rem;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-left: solid 1px;
+    border-right: unset;
+    border-color: #002e62;
+    transition: background-color .2s,color .2s,border-color .2s,box-shadow .2s;
+    appearance: none;
+    border-radius: unset !important;
+    border-top-left-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+}
+:host ::ng-deep .p-inputgroup button:last-child, .p-inputgroup input:last-child, .p-inputgroup-addon:last-child, .p-inputgroup>.p-inputwrapper:last-child>.p-component, .p-inputgroup>.p-inputwrapper:last-child>.p-component>.p-inputtext {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #fff;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  border-right: solid 1px;
+  border-color: #002e62;
+  border-left: unset;
+  
+}
+:host ::ng-deep .p-inputtext:enabled:focus{
+  border-color: unset !important;
+  box-shadow: unset ;
+}
+:host ::ng-deep .p-inputtext:enabled:hover{
+  border-color: unset !important;
+} */
+
+  :host ::ng-deep .p-inputtext {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    /* color: #495057; */
+    background: #fff;
+    /* height: 50px; */
+    color: #002e62;
+    width: 460px;
+    padding: 0.75rem 1.75rem;
+    /* border: 2px solid #002e62; */
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    border-left: solid 2px;
+    border-right: solid 2px;
+    border-color: #002e62;
+    /* border-color: #dcdcdc; */
+    transition: background-color .2s,color .2s,border-color .2s,box-shadow .2s;
+    appearance: none;
+    border-radius: unset !important;
+    border-top-left-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+    /* box-shadow: -1px 2px 15px 7px #dcdcdc; */
+    /* box-shadow: -3px 10px 10px #dcdcdc; */
+    box-shadow: 0 -10px 20px -5px rgba(226, 226, 226, 0.75),
+    0 10px 20px -5px rgba(226, 226, 226, 0.75),
+    -10px 0 20px -5px rgba(226, 226, 226, 0.75);
+}
+/* :host ::ng-deep .p-inputgroup button:last-child, .p-inputgroup input:last-child, .p-inputgroup-addon:last-child, .p-inputgroup>.p-inputwrapper:last-child>.p-component, .p-inputgroup>.p-inputwrapper:last-child>.p-component>.p-inputtext {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  
+  background: #fff;
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  border-right: solid 2px;
+  border-color: #002e62;
+  border-left: unset;
+
+  box-shadow: 0 -10px 20px -5px rgba(226, 226, 226, 0.75),
+                0 10px 20px -5px rgba(226, 226, 226, 0.75),
+                10px 0 20px -5px rgba(226, 226, 226, 0.75);
+ 
+} */
+:host ::ng-deep .p-inputtext:enabled:focus{
+  border-color: unset !important;
+  box-shadow: unset ;
+  /* box-shadow: -4px 2px 9px 2px #dcdcdc; */
+  /* box-shadow: 0 10px 10px #dcdcdc; */
+  box-shadow: 0 -10px 20px -5px rgba(226, 226, 226, 0.75),
+    0 10px 20px -5px rgba(226, 226, 226, 0.75),
+    -10px 0 20px -5px rgba(226, 226, 226, 0.75);
+    /* z-index: 2222; */
+}
+:host ::ng-deep .p-inputtext:enabled:hover{
+  border-color: unset !important;
+  /* box-shadow: 0 10px 10px #dcdcdc; */
+  /* box-shadow: -4px 6px 9px 2px #dcdcdc; */
+  /* box-shadow: 0 10px 20px -5px rgba(115,115,115,0.75); */
+}
+
+:host ::ng-deep.p-autocomplete .p-autocomplete-panel {
+  min-width: 99%;
+  margin-left: 5px;
+  /* overflow-y: hidden; */
+  /* margin-top: -38px; */
+}
+:host ::ng-deep.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  border: 0 none;
+  color: #495057;
+  background: 0 0;
+  transition: box-shadow .2s;
+  border-radius: 0;
+  /* margin-top: 15px; */
+}
+
+
+
+.searchBox{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center;
+  align-items: center; */
+
+}
+.middleitem{
+  margin-left: 70px;
+  margin-right: 54px;
+}
+
+
+
+
+
+
+.searchButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 46, 98,.7);
+  position: absolute;
+  margin-left: 9px;
+  z-index: 2222;
+  margin-top: 16px;
+
+}
+
+  .bar{
+  margin:0 auto;
+  width:575px;
+  border-radius:30px;
+  border:1px solid #dcdcdc;
+  }
+  .bar:hover{
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+  }
+  .bar:focus-within{
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+  outline:none;
+  }
+  .searchbar{
+  height:45px;
+  border:none;
+  width:500px;
+  font-size:16px;
+  outline: none;
+  }
+  
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    /* margin: 20px; */
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 22px;
+    flex-grow: 1;
+  }
+  
+  .search-bar button {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

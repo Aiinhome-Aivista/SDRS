@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div>
+    <app-leftsidemenu></app-leftsidemenu>
+    <div class="rightmiddlesection">
+        <!-- Header -->
+        <div class="chat-header">
+            <h3>Speak To Your Data</h3>
+        </div>
+
+        <!-- Messages -->
+        <div class="chat-messages" #messagesContainer>
+            <div *ngFor="let msg of messages" class="message" [ngClass]="msg.sender">
+                <!-- Show loader if msg.isLoading is true -->
+                <div *ngIf="msg.isLoading" class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- Otherwise, show the message text -->
+                <div *ngIf="!msg.isLoading" class="message-text">{{ msg.text }}</div>
+                <div class="message-time">{{ msg.time | date:'shortTime' }}</div>
+            </div>
+        </div>
+
+        <!-- Input -->
+        <div class="chat-input">
+            <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
+            <button (click)="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
