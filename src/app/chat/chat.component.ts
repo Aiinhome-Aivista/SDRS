@@ -67,7 +67,7 @@ export class ChatComponent {
         }
 
         // ✅ Bind correct property from API response
-        const botMessageText = response.ai_response || 'No response received.';
+        const botMessageText = response.answer || 'No response received.';
 
         this.messages.push({
           text: botMessageText,
