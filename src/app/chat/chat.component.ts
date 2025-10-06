@@ -27,7 +27,7 @@ export class ChatComponent implements OnInit {
     this.userName = sessionStorage.getItem("Firstname");
     this.messages = [
       {
-        text: `Hi ${this.userName || 'there'}! I’m here to help you retrieve information from your submitted data.`,
+        text: `Hi ${this.userName || 'there'}! I’m here to help you retrieve information from database.`,
         sender: 'bot',
         time: new Date()
       }
