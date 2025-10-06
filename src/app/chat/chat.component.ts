@@ -18,7 +18,13 @@ export class ChatComponent {
 
   private authService = inject(Service_authorization);
 
-  messages: Message[] = [];
+  messages: Message[] = [
+    {
+      text: 'Hello! How can I help you today?',
+      sender: 'bot',
+      time: new Date()
+    }
+  ];
   newMessage: string = '';
   isOpen: boolean = false;
 
