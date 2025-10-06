@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { Service_authorization } from '../service/authservice';
 
 interface Message {
@@ -13,20 +13,26 @@ interface Message {
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit {
   @ViewChild('messagesContainer') messagesContainer: ElementRef;
+  userName: any;
 
   private authService = inject(Service_authorization);
 
-  messages: Message[] = [
-    {
-      text: 'Hello! How can I help you today?',
-      sender: 'bot',
-      time: new Date()
-    }
-  ];
+  messages: Message[] = [];
   newMessage: string = '';
   isOpen: boolean = false;
+
+  ngOnInit(): void {
+    this.userName = sessionStorage.getItem("Firstname");
+    this.messages = [
+      {
+        text: `Hi ${this.userName || 'there'}! I’m here to help you retrieve information from your submitted data.`,
+        sender: 'bot',
+        time: new Date()
+      }
+    ];
+  }
 
   toggleChat() {
     this.isOpen = !this.isOpen;
