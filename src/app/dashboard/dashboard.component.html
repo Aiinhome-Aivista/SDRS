@@ -5,7 +5,7 @@
 
     <div class="topContainer">
 
-      <div class="smallsegment" style="background-color:#ffcc0060">
+      <div class="smallsegment" style="background-color:#ffcc0060; cursor: default;">
         <div class="background_positon"><i class="fa fa-upload " style="font-size: 60px;padding:5px;color:#b38f0070"
             aria-hidden="true"></i></div>
         <div class=background_data>
@@ -17,25 +17,16 @@
 
       </div>
 
-      <div class=" smallsegment" style="background-color:#00cc6660">
-        <div class="background_positon"><i class="fa fa-check-square-o " style="font-size: 60px;color:#00994d70"
+      <div class="smallsegment" style="background-color:#00cc6660; cursor: pointer;" routerLinkActive="active"
+        [routerLink]="['/chat']" (click)="navigate()">
+        <div class="background_positon"><i class="fa fa-ticket " style="font-size: 60px;color:#00994d70"
             aria-hidden="true"></i></div>
         <div class=background_data>
-
-          <h1 style="font-weight: 800;font-size: 50px; color:#002e62">{{documentSucess}}</h1>
-          <p class="segment_header">Document read success</p>
+          <h1 style="font-weight: 800;font-size: 30px; color:#002e62">Retrieve Data</h1>
+          <p class="segment_header">Access stored information</p>
 
         </div>
 
-      </div>
-      <div class="smallsegment" style="background-color:#ff330060">
-        <div class="background_positon"><i class="fa fa-exclamation-triangle "
-            style="font-size: 55px;padding:5px;color:#cc290070" aria-hidden="true"></i></div>
-        <div class=background_data>
-
-          <h1 style="font-weight: 800;font-size: 50px; color:#002e62">{{documentMatched}}</h1>
-          <p class="segment_header">Document Unextracted</p>
-        </div>
       </div>
 
     </div>
@@ -102,12 +93,13 @@
 
                 <!-- action column -->
                 <span *ngSwitchCase="'action'" style="text-align: center;">
-                  <button (click)="showDialog(rowData)" type="button" class="btnn">
+                  <button id="btn" (click)="showDialog(rowData)" type="button" class="btnn" data-toggle="modal"
+                    data-target="#exampleModalCenter" label="Show">
                     <i class="fa fa-eye" aria-hidden="true"></i>
                   </button>
-                  <button (click)="showDocuments(rowData)" type="button" class="btnn">
+                  <!-- <button (click)="showDocuments(rowData)" type="button" class="btnn">
                     <i class="fa-solid fa-file"></i>
-                  </button>
+                  </button> -->
                 </span>
 
                 <!-- default column -->
