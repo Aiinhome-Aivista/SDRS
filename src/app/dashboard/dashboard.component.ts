@@ -2,17 +2,13 @@ import {
   Component,
   ElementRef,
   OnInit,
-  AfterViewInit,
   ViewChild,
-  ViewChildren,
-  QueryList,
-  Inject
+  Inject,
+  OnDestroy
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Session } from 'protractor';
 import { ToastrService } from 'ngx-toastr';
 import { Service_authorization } from '../service/authservice';
-import * as $ from 'jquery'
 import { DOCUMENT } from '@angular/common';
 import { Table } from 'primeng/table';
 declare var webkitSpeechRecognition: any;
@@ -22,7 +18,7 @@ declare var webkitSpeechRecognition: any;
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   @ViewChild('dt') rd: Table;
   mainheading = localStorage.getItem('mainheading');
@@ -62,11 +58,11 @@ export class DashboardComponent implements OnInit {
   showLebel3: boolean = true
   showLebel4: boolean = true
   showLebel5: boolean = true
-  spinner:boolean=false;
+  spinner: boolean = false;
   searchQuery: string = '';
   recognition: any;
   listening: boolean = false;
-  selectedLanguage:any;
+  selectedLanguage: any;
 
   clean(obj) {
     for (var propName in obj) {
@@ -78,20 +74,20 @@ export class DashboardComponent implements OnInit {
   }
   showDialog(data) {
     console.log("eyeclick", data)
-    
-  //  let filterobj = Object.keys(data).forEach(key => {
-  //     if (data[key] == null) {
-  //       delete data[key];
-  //     }
-  //   });
+
+    //  let filterobj = Object.keys(data).forEach(key => {
+    //     if (data[key] == null) {
+    //       delete data[key];
+    //     }
+    //   });
     console.log("obj.......", this.clean(data))
 
 
-    let OBJkeys=Object.keys(this.clean(data))
+    let OBJkeys = Object.keys(this.clean(data))
     let OBJValues = Object.values(this.clean(data));
-    this.TableHeaderArray= OBJkeys;
+    this.TableHeaderArray = OBJkeys;
     this.FilterArray = OBJValues;
-  
+
     console.log(" OBJkeys ", OBJkeys);
     console.log(" OBJValues ", this.TableHeaderArray);
 
@@ -100,7 +96,7 @@ export class DashboardComponent implements OnInit {
     // });
 
 
-  
+
 
 
 
@@ -108,8 +104,8 @@ export class DashboardComponent implements OnInit {
     // this.TableHeaderArray=[];
     // for (let i = 0; i < this.FilterArray.length; i++) {
 
-     
-  
+
+
     //   // console.log("out of condition")
     //    if(i==0)
     //   {
@@ -139,8 +135,8 @@ export class DashboardComponent implements OnInit {
     // }
 
 
-    console.log("array Headder",this.TableHeaderArray);
-  
+    console.log("array Headder", this.TableHeaderArray);
+
 
     // here all null value filltered
 
@@ -190,38 +186,37 @@ export class DashboardComponent implements OnInit {
       "blobname": this.searchValue
     }
     this._authorizationApi.search2(body).subscribe(data => {
-      console.log('columndate........',data);
+      console.log('columndate........', data);
       console.log('search', JSON.parse(data))
       this.ResumeTableData = JSON.parse(data)
     })
   }
 
-getAlldata()
-{
-  this.spinner=true;
-  setTimeout(()=>this.spinner=false,3000);
-  this._authorizationApi.getDashboardData().subscribe(data => {
-    console.log("dashboard data tohohoh ----------------------->", data);
-    if (data.status) {
-      this.ResumeTableData = data.data
-      this.ResumeTableDataFilter = data.data
-      this.columnField= Object.keys(data.data[0])
-      
-    }
-    else {
-      this.toast.error("Record not found", 'Error');
-    }
-  })
-}
+  getAlldata() {
+    this.spinner = true;
+    setTimeout(() => this.spinner = false, 3000);
+    this._authorizationApi.getDashboardData().subscribe(data => {
+      console.log("dashboard data tohohoh ----------------------->", data);
+      if (data.status) {
+        this.ResumeTableData = data.data
+        this.ResumeTableDataFilter = data.data
+        this.columnField = Object.keys(data.data[0])
+
+      }
+      else {
+        this.toast.error("Record not found", 'Error');
+      }
+    })
+  }
 
 
-// intervalId = setInterval(()=>this.getAlldata(), 10000);
+  ngOnDestroy() {
+    // Clear intervals to prevent memory leaks
+    if (this.conterStop) clearInterval(this.conterStop);
+    if (this.successStop) clearInterval(this.successStop);
+    if (this.matchedStop) clearInterval(this.matchedStop);
+  }
 
-
-
-// ngOnDestroy() {
-//   clearInterval(this.intervalId);
-// }
   ngOnInit(): void {
     this.languagechnge(0);
     this.funDocumentCount()
@@ -238,66 +233,45 @@ getAlldata()
 
     ];
 
-
-    // this.FileManagementColsFilter = [
-    //   { header: 'Name', field: 'Name', width: '40px', sort: true },
-    //   { header: 'Document', field: 'Document_Type', width: '40px', sort: true },
-    //   { header: 'Date', field: 'DOB', width: '60px', sort: true },
-    //   { header: 'Address', field: 'Address1', width: '60px', sort: true },
-    //   { header: 'Action', field: 'action', width: '20px' },
-    //   { header: 'Address2', field: 'Address2', width: '20px' },
-    //   // { header: 'DOB', field: 'DOB', width: '20px' },
-    //   { header: 'Document_Type', field: 'Document_Type', width: '20px' },
-    //   // { header: 'Identity_No', field: 'Identity_No', width: '20px' },
-    //   { header: 'Name', field: 'Name', width: '20px' },
-    //   { header: 'Name2', field: 'Name2', width: '20px' },
-    //   { header: 'Name3', field: 'Name3', width: '20px' },
-    //   { header: 'blood_group', field: 'blood_group', width: '20px' },
-    //   // { header: 'college_id', field: 'college_id', width: '20px' },
-    //   { header: 'column1', field: 'column1', width: '20px' },
-    //   { header: 'column2', field: 'column2', width: '20px' },
-    //   { header: 'column3', field: 'column3', width: '20px' },
-    //   { header: 'column4', field: 'column4', width: '20px' },
-    //   { header: 'column5', field: 'column5', width: '20px' },
-    //   { header: 'column6', field: 'column6', width: '20px' },
-    //   { header: 'column7', field: 'column7', width: '20px' },
-    //   { header: 'column8', field: 'column8', width: '20px' },
-    //   { header: 'column9', field: 'column9', width: '20px' },
-    //   { header: 'column10', field: 'column10', width: '20px' },
-    //   { header: 'course', field: 'course', width: '20px' },
-    //   // { header: 'created_date', field: 'created_date', width: '20px' },
-    //   { header: 'file_name', field: 'file_name', width: '20px' },
-    //   // { header: 'image_count', field: 'image_count', width: '20px' },
-    //   { header: 'image_link', field: 'image_link', width: '20px' },
-    //   // { header: 'modified_date', field: 'modified_date', width: '20px' },
-    //   { header: 'roll_no', field: 'roll_no', width: '20px' },
-    //   { header: 'section', field: 'section', width: '20px' },
-    //   { header: 'stream', field: 'stream', width: '20px' },
-    //   { header: 'subject', field: 'subject', width: '20px' },
-    //   // { header: 'valid_upto', field: 'valid_upto', width: '20px' }
-    // ];
-
-    // this.FileManagementColsFilter.forEach(el => {
-    //   this.columnField.push(el.field)
-    //   // console.log("dfdfdfdf",el)
-    // });
-
-    console.log('thojhhxidgns',this.columnField)
-
+    console.log('thojhhxidgns', this.columnField)
 
     this.getAlldata()
-
-
   }
 
 
   ResumeTableDataFilter: any = []
   counter: any;
+
   funDocumentCount = () => {
     this._authorizationApi.getDocumentCont().subscribe(data => {
-      console.log("documentgetCount", data)
-      this.counter = data
-    })
+      console.log("documentgetCount", data);
+      this.counter = data;
+
+      // Start counters only after we have the data
+      this.startCounters();
+    });
+  }
+
+  startCounters() {
+    if (this.conterStop) clearInterval(this.conterStop);
+    this.conterStop = setInterval(() => {
+      if (this.documentCounter < this.counter.Document_uploaded) {
+        this.documentCounter++;
+      } else {
+        clearInterval(this.conterStop);
+      }
+    }, 10); // Increased interval for better performance
+
+    if (this.successStop) clearInterval(this.successStop);
+    this.successStop = setInterval(() => {
+      if (this.documentSucess < this.counter.Document_read_success) {
+        this.documentSucess++;
+      } else {
+        clearInterval(this.successStop);
+      }
+    }, 10);
+
+    // You can add back the matchedStop interval here if needed, following the same pattern.
   }
 
   somethingChanged(data: any) {
@@ -348,36 +322,15 @@ getAlldata()
   documentCounter: number = 0;
   documentSucess: number = 0;
   documentMatched: number = 0;
-  conterStop: any = setInterval(() => {
-    this.documentCounter++;
-    if (this.counter) {
-      if (this.documentCounter == this.counter.Document_uploaded) {
-        clearInterval(this.conterStop)
-      }
-    }
-  }, 1);
-  successStop: any = setInterval(() => {
-    this.documentSucess++;
-    if (this.counter) {
-      if (this.documentSucess == this.counter.Document_read_success) {
-        clearInterval(this.successStop)
-      }
-    }
-  },1);
-  matchedStop: any = setInterval(() => {
 
-    if (this.counter && this.counter.Unextrable != 0) {
-      this.documentMatched++;
-      if (this.documentMatched == this.counter.Unextrable) {
-        clearInterval(this.matchedStop)
-      }
-    }
+  conterStop: any;
+  successStop: any;
+  matchedStop: any;
 
-  }, 1);
 
   showDocuments(data) {
 
-    console.log("link..........",data)
+    console.log("link..........", data)
     window.open("http://127.0.0.1:5000/viewDocument/" + data.image_link, '_blank');
 
 
@@ -391,19 +344,18 @@ getAlldata()
     this.listening = !this.listening;
   }
 
-  languagechnge(lng:any){
-    if(lng==1)
-    {
-      this.selectedLanguage= 'en-IN';
-      
+  languagechnge(lng: any) {
+    if (lng == 1) {
+      this.selectedLanguage = 'en-IN';
+
     }
-    else if(lng==2){
-      this.selectedLanguage='hi-IN';
+    else if (lng == 2) {
+      this.selectedLanguage = 'hi-IN';
     }
-    else{
-      this.selectedLanguage='en-US';
+    else {
+      this.selectedLanguage = 'en-US';
     }
-    
+
   }
 
   startListening(): void {
@@ -415,7 +367,7 @@ getAlldata()
     // this.recognition.lang = 'hi-IN';
     // this.recognition.lang = 'en-IN';
     this.recognition.start();
-    this.recognition.onresult = (event:any) => {
+    this.recognition.onresult = (event: any) => {
       const result = event.results[0][0].transcript;
       this.searchQuery = result;
       this.stopListening();
