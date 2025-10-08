@@ -316,7 +316,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.toast.error("Successfully logout")
   }
   navigate() {
-    this.route.navigate(['filemanager'])
+    this.route.navigate(['chat'])
     localStorage.setItem('mainheading', 'Resource manager section')
   }
   documentCounter: number = 0;
